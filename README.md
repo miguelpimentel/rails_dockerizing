@@ -43,7 +43,7 @@ docker-compose up
 To run the unit tests:
 
 ```
-docker exec -it vue-js yarn test:unit
+docker-compose run api bundle exec rails test
 ```
 
 ## Requirements
@@ -65,4 +65,4 @@ After execute the previous steps, the client will be available at:
 
 It was linked Code Climate as static code tool. The results could be acessed by the link presented below:
 
-[Maintainability Report](https://codeclimate.com/github/miguelpimentel/rails_dockerizing/maintainability))
+[Maintainability Report](https://codeclimate.com/github/miguelpimentel/rails_dockerizing/maintainability)
