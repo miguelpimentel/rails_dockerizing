@@ -1,0 +1,24 @@
+name: Unit Test
+
+on: 
+  pull request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Docker Build
+      run: docker-compose build
+        
+    - name: Setup Docker Build and Test
+      run: |
+        docker-compose run api rake db:create
+        docker-compose run api rake db:migrate
+
+    - name: Docker List
+      run: docker container ls
+
+    - name: Run Unit Test
+      run: docker-compose run api bundle exec rails test
