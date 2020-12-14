@@ -20,4 +20,4 @@ jobs:
       run: docker container ls
 
     - name: Run Unit Test
-      run: docker-compose run api bundle exec rails tes
+      run: docker-compose run api bundle exec rails test
