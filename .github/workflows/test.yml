@@ -8,10 +8,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Docker build
+    - name: Docker Build
       run: docker-compose build
         
-    - name: Setup Docker build
+    - name: Setup Docker Build
       run: |
         docker-compose run api rake db:create
         docker-compose run api rake db:migrate
+
+    - name: Run Unit Test
+      run: docker exec -it api bundle exec rails test
+
+    - name: Docker Down
+      run: docker-compose down
