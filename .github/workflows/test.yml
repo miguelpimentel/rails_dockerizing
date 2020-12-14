@@ -17,7 +17,7 @@ jobs:
         docker-compose run api rake db:migrate
 
     - name: Docker Down
-      run: docker containter ls
+      run: docker container ls
 
     - name: Run Unit Test
       run: docker exec -it api bundle exec rails test
