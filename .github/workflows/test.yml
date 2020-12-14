@@ -17,4 +17,4 @@ jobs:
         docker-compose run api rake db:migrate
 
     - name: List containers
-        docker container -ls 
+        run: docker container -ls 
