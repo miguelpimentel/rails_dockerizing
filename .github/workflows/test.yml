@@ -13,7 +13,8 @@ jobs:
         
     - name: Setup Docker, Build and Test
       run: |
-        docker-compose build
         docker-compose run api rake db:create
         docker-compose run api rake db:migrate
-        docker exec -it api bundle exec rails test
+
+    - name: List containers
+        docker container -ls 
